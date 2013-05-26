@@ -46,9 +46,13 @@ function setPlaybackRate(rate) {
     // show infobox if not already added and update rate indicator.
     if (videoElements && !document.getElementById("playbackrate-indicator")) {
         document.body.appendChild(infobox);
-        infobox.style.visibility = "visible";
     }
+
+    infobox.style.visibility = "visible";
     infobox.innerHTML = rate + "x";
+    setTimeout(function(){
+                    infobox.style.visibility = "hidden";
+               }, 1000);               
 }
 
 
